@@ -4,17 +4,153 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rickshitha K | Software Developer</title>
-  <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    :root {
+      --bg: #f7f9fb;
+      --text: #1f2937;
+      --box: #ffffff;
+      --accent: #2563eb;
+      --hover: #1e40af;
+    }
+    body.dark {
+      --bg: #0f172a;
+      --text: #f1f5f9;
+      --box: #1e293b;
+      --accent: #60a5fa;
+      --hover: #93c5fd;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      transition: background 0.5s ease, color 0.5s ease;
+      padding: 40px;
+      scroll-behavior: smooth;
+    }
+    main section {
+      background: var(--box);
+      padding: 20px;
+      margin: 30px auto;
+      max-width: 900px;
+      border-radius: 16px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+      transition: background 0.5s ease;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    header h1 {
+      font-size: 3rem;
+      color: var(--accent);
+      animation: fadeSlideIn 1s ease-out;
+    }
+    .title {
+      font-size: 1.5rem;
+      color: var(--text);
+      margin-top: 10px;
+    }
+    .links a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: var(--accent);
+      font-weight: 500;
+      transition: color 0.3s, transform 0.3s;
+    }
+    .links a:hover {
+      color: var(--hover);
+      transform: scale(1.1);
+    }
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 15px;
+      color: var(--accent);
+    }
+    h3 {
+      font-size: 1.3rem;
+      margin-top: 20px;
+      color: var(--text);
+    }
+    ul {
+      padding-left: 20px;
+    }
+    ul li {
+      margin-bottom: 10px;
+      line-height: 1.7;
+    }
+    a {
+      color: var(--accent);
+      text-decoration: underline;
+    }
+    a:hover {
+      color: var(--hover);
+    }
+    footer {
+      text-align: center;
+      margin-top: 60px;
+      font-size: 0.9rem;
+      color: var(--text);
+    }
+    .theme-toggle-wrapper {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
+    }
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 50px;
+      height: 26px;
+    }
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: #ccc;
+      transition: .4s;
+      border-radius: 34px;
+    }
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 20px;
+      width: 20px;
+      left: 4px;
+      bottom: 3px;
+      background-color: white;
+      transition: .4s;
+      border-radius: 50%;
+    }
+    input:checked + .slider {
+      background-color: var(--accent);
+    }
+    input:checked + .slider:before {
+      transform: translateX(24px);
+    }
+    @keyframes fadeSlideIn {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
 <body>
+  <div class="theme-toggle-wrapper">
+    <label class="switch">
+      <input type="checkbox" id="theme-toggle">
+      <span class="slider round"></span>
+    </label>
+  </div>
 
-  <button id="theme-toggle" title="Toggle Dark/Light Mode">🌙</button>
-
-  <header>
+  <header data-aos="fade-down">
     <h1>Rickshitha K</h1>
     <p class="title">Software Developer</p>
     <div class="links">
@@ -33,7 +169,7 @@
       </ul>
     </section>
 
-    <section data-aos="fade-up">
+    <section data-aos="fade-left">
       <h2>Internships</h2>
       <h3>Java Programming Intern – Code Alpha (Jun 2025 – Jul 2025)</h3>
       <ul>
@@ -50,7 +186,7 @@
       </ul>
     </section>
 
-    <section data-aos="fade-up">
+    <section data-aos="fade-right">
       <h2>Projects</h2>
       <h3>College Fee Management System (Java, MySQL)</h3>
       <ul>
@@ -67,14 +203,14 @@
       </ul>
     </section>
 
-    <section data-aos="fade-up">
+    <section data-aos="zoom-in">
       <h2>Technical Skills</h2>
       <p><strong>Languages:</strong> Java, C++, C, Python, SQL, HTML/CSS</p>
       <p><strong>Frameworks:</strong> Spring Boot, Node.js, Flask, Streamlit</p>
       <p><strong>Tools:</strong> Eclipse, VS Code, MySQL, IntelliJ, Git</p>
     </section>
 
-    <section data-aos="fade-up">
+    <section data-aos="flip-left">
       <h2>Certifications</h2>
       <ul>
         <li>HackXelerate - KPR Institution (Apr 2025) – 
@@ -86,7 +222,7 @@
       </ul>
     </section>
 
-    <section data-aos="fade-up">
+    <section data-aos="flip-right">
       <h2>Achievements</h2>
       <ul>
         <li>Intel Hackathon – Best Concept Award (Oct 2024) – 
@@ -101,12 +237,18 @@
     </section>
   </main>
 
-  <footer>
+  <footer data-aos="fade-in">
     <p>© 2025 Rickshitha K. All rights reserved.</p>
   </footer>
 
-  <script src="script.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>AOS.init();</script>
+  <script>
+    AOS.init();
+    const toggleBtn = document.getElementById('theme-toggle');
+    const body = document.body;
+    toggleBtn.addEventListener('change', () => {
+      body.classList.toggle('dark');
+    });
+  </script>
 </body>
 </html>
